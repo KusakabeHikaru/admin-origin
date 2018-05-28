@@ -28,6 +28,7 @@ import Layout from '../views/layout/Layout'
   }
 **/
 export const constantRouterMap = [
+  // 具体路由表示为 component: '@/view/login/index.vue'
   { path: '/login', component: _import('login/index'), hidden: true },
   { path: '/authredirect', component: _import('login/authredirect'), hidden: true },
   { path: '/404', component: _import('errorPage/404'), hidden: true },
@@ -62,6 +63,7 @@ export const constantRouterMap = [
       path: 'index',
       component: _import('guide/index'),
       name: 'guide',
+      // ?
       meta: { title: 'guide', icon: 'guide', noCache: true }
     }]
   }
@@ -124,6 +126,7 @@ export const asyncRouterMap = [
       icon: 'component'
     },
     children: [
+      // 二级菜单 --- 子组件
       { path: 'tinymce', component: _import('components-demo/tinymce'), name: 'tinymce-demo', meta: { title: 'tinymce' }},
       { path: 'markdown', component: _import('components-demo/markdown'), name: 'markdown-demo', meta: { title: 'markdown' }},
       { path: 'json-editor', component: _import('components-demo/jsonEditor'), name: 'jsonEditor-demo', meta: { title: 'jsonEditor' }},

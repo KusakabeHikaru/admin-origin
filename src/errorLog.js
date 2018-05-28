@@ -10,6 +10,7 @@ Vue.config.errorHandler = function(err, vm, info, a) {
   Vue.nextTick(() => {
     store.dispatch('addErrorLog', {
       err,
+      // vm?
       vm,
       info,
       url: window.location.href

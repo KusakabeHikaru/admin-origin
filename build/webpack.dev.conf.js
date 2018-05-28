@@ -53,9 +53,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true,
+      inject: true, // 设置为true表示将所有的js文件放在body的后面
+      // 加入favicon
       favicon: resolve('favicon.ico'),
+      // 页面标题
       title: 'vue-element-admin',
+      // ?
       path: config.dev.assetsPublicPath + config.dev.assetsSubDirectory
     }),
   ]

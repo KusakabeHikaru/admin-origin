@@ -5,6 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
+  // __dirname --- 存储的文件所在的文件目录
   return path.join(__dirname, '..', dir)
 }
 

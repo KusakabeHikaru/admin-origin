@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const config = require('../config')
+// extract-text-webpack-plugin 插件，用来将css提取到单独的css文件中去
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
@@ -8,7 +9,7 @@ exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory
-
+// path.join和path.posix.join 区别 ： 前者返回完成的路径C:/XX/XX 后者是完整路径的相对根路径
   return path.posix.join(assetsSubDirectory, _path)
 }
 

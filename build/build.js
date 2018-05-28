@@ -1,18 +1,26 @@
 'use strict'
 require('./check-versions')()
 
+// ora --- 实现nodejs控制台的loading效果
 const ora = require('ora')
+// node环境下的rm -rf的命令库
 const rm = require('rimraf')
 const path = require('path')
+
+// 控制台文字颜色控制
 const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
+// 在build时引入的是 'prod'的偶尔、、配置
 const webpackConfig = require('./webpack.prod.conf')
+
+// Ajax在请求是会破坏浏览器的前进后退功能，故使用pushstate-server可以修补Ajax的问题
 const server = require('pushstate-server')
 
 var spinner = ora('building for '+ process.env.env_config+ ' environment...' )
 spinner.start()
 
+// 删除已编译的文件
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
   if (err) throw err
   webpack(webpackConfig, (err, stats) => {
